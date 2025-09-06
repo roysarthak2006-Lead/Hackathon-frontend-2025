@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CarbonX — Green Carbon NFT Marketplace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas background -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <!-- Top navigation -->
+  <nav class="nav">
+    <div class="logo">CarbonX</div>
+    <ul class="nav-links">
+      <li><a href="#home" data-link>Home</a></li>
+      <li><a href="#dashboard" data-link>Dashboard</a></li>
+      <li><a href="#quests" data-link>Eco-Quests</a></li>
+      <li><a href="#market" data-link>Marketplace</a></li>
+      <li><a href="#leaderboard" data-link>Leaderboard</a></li>
+      <li><a href="#dao" data-link>DAO</a></li>
+      <li><a href="#badges" data-link>Achievements</a></li>
+      <li><a href="#faq" data-link>FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="connectBtn" class="btn btn-outline">Connect Wallet</button>
+      <button id="startQuestTop" class="btn btn-primary">Start Your Quest</button>
+    </div>
+  </nav>
+
+  <!-- Hero / Landing -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>CarbonX</h1>
+        <p class="lead">Decentralized Green Carbon NFT Marketplace — mint, trade & reward real eco-actions.</p>
+        <div class="hero-ctas">
+          <button id="ctaStart" class="btn btn-primary">Start Your Quest</button>
+          <button id="ctaLearn" class="btn btn-ghost">Learn More</button>
+        </div>
+        <!-- User stats -->
+        <div class="stats">
+          <div><strong id="stat-xp">120</strong> XP</div>
+          <div><strong id="stat-tokens">45</strong> Tokens</div>
+          <div><strong id="stat-nfts">2</strong> NFTs</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- 3D NFT Cube -->
+        <div class="cube-wrap" aria-hidden="true">
+          <div class="cube">
+            <div class="face front">🌱</div>
+            <div class="face back">⚡</div>
+            <div class="face right">🪙</div>
+            <div class="face left">🏆</div>
+            <div class="face top">🔗</div>
+            <div class="face bottom">🌍</div>
+          </div>
+        </div>
+
+        <!-- Mini market preview -->
+        <div class="mini-market">
+          <div class="card small">
+            <div class="card-title">GreenProof #011</div>
+            <div class="card-meta">0.02 ETH</div>
+            <button class="btn btn-sm" data-buy>Buy</button>
+          </div>
+          <div class="card small">
+            <div class="card-title">Reef Saver Badge</div>
+            <div class="card-meta">Mint</div>
+            <button class="btn btn-sm" data-mint>Mint</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="section">
+    <div class="section-inner">
+      <h2>Dashboard</h2>
+      <div class="dashboard-grid">
+        <div class="panel">
+          <h3>Wallet</h3>
+          <p id="walletAddr">Not connected</p>
+          <div class="panel-actions">
+            <button id="disconnectBtn" class="btn btn-outline">Disconnect</button>
+            <button id="claimRewards" class="btn btn-primary">Claim Rewards</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>My NFTs</h3>
+          <div id="nftGallery" class="nft-gallery">
+            <div class="nft-thumb">Badge #1: GreenProof</div>
+            <div class="nft-thumb">Badge #2: Energy Saver</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Progress</h3>
+          <div class="progress-wrap">
+            <label>Daily Streak (3/7 days)</label>
+            <div class="progress">
+              <div id="streakBar" class="progress-bar" style="width: 43%"></div>
+            </div>
+            <label>XP (120)</label>
+            <div class="progress">
+              <div id="xpBar" class="progress-bar" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Leaderboard Snapshot</h3>
+          <ol id="leaderPreview" class="leader-preview">
+            <li>Asha — 1640 XP</li>
+            <li>Miguel — 1022 XP</li>
+            <li>Zara — 980 XP</li>
+            <li>You — 120 XP</li>
+          </ol>
+          <button class="btn btn-ghost" data-open-leader>View Full Leaderboard</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eco-Quests -->
+  <section id="quests" class="section alt">
+    <div class="section-inner">
+      <h2>Eco-Quests</h2>
+      <div class="quests-grid">
+        <!-- Quest card 1 -->
+        <div class="quest-card">
+          <h3>Recycle 10 Bottles</h3>
+          <p>Upload proof to mint badge NFT.</p>
+          <p><strong>Rewards:</strong> +20 XP, +5 Tokens, NFT Badge</p>
+          <div class="quest-actions">
+            <button class="btn btn-primary">Join Quest</button>
+            <button class="btn btn-outline">Upload Proof</button>
+          </div>
+        </div>
+
+        <!-- Quest card 2 -->
+        <div class="quest-card">
+          <h3>Plant a Tree</h3>
+          <p>Upload proof (photo/receipt) to mint badge NFT.</p>
+          <p><strong>Rewards:</strong> +40 XP, +10 Tokens, NFT Badge</p>
+          <div class="quest-actions">
+            <button class="btn btn-primary">Join Quest</button>
+            <button class="btn btn-outline">Upload Proof</button>
+          </div>
+        </div>
+
+        <!-- Quest card 3 -->
+        <div class="quest-card">
+          <h3>Energy Saver</h3>
+          <p>Upload IoT/meter proof to mint badge NFT.</p>
+          <p><strong>Rewards:</strong> +30 XP, +8 Tokens, NFT Badge</p>
+          <div class="quest-actions">
+            <button class="btn btn-primary">Join Quest</button>
+            <button class="btn btn-outline">Upload Proof</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketplace -->
+  <section id="market" class="section">
+    <div class="section-inner">
+      <h2>Marketplace</h2>
+      <div class="market-grid" id="marketGrid">
+        <div class="card">
+          <p>GreenProof #001 — 0.02 ETH</p>
+          <button class="btn btn-sm">Buy</button>
+        </div>
+        <div class="card">
+          <p>Reef Saver Badge — Mint (0 ETH)</p>
+          <button class="btn btn-sm">Mint</button>
+        </div>
+        <div class="card">
+          <p>Forest Guardian — 0.05 ETH</p>
+          <button class="btn btn-sm">Buy</button>
+        </div>
+        <div class="card">
+          <p>Solar Hero — 0.01 ETH</p>
+          <button class="btn btn-sm">Buy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaderboard -->
+  <section id="leaderboard" class="section alt">
+    <div class="section-inner">
+      <h2>Leaderboard</h2>
+      <ol id="leaderboardList" class="leaderboard-list">
+        <li>Asha — 1640 XP</li>
+        <li>Miguel — 1022 XP</li>
+        <li>Zara — 980 XP</li>
+        <li>You — 120 XP</li>
+      </ol>
+      <button class="btn btn-primary" id="joinSeason">Join Seasonal Challenge</button>
+      <p class="hint">Top 50 recyclers this season win a rare NFT + 100 Tokens</p>
+    </div>
+  </section>
+
+  <!-- DAO -->
+  <section id="dao" class="section">
+    <div class="section-inner">
+      <h2>DAO / Governance</h2>
+      <div class="dao-grid">
+        <div class="dao-panel">
+          <h3>Active Proposals</h3>
+          <div id="proposals">
+            <div class="proposal">
+              Plant 10k trees (India) — Votes: 1240
+              <button class="btn btn-sm">Vote</button>
+            </div>
+            <div class="proposal">
+              Ocean cleanup (coastal) — Votes: 870
+              <button class="btn btn-sm">Vote</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dao-panel">
+          <h3>My Voting Power</h3>
+          <p id="votingPower">4.5 GOV Tokens = 4.5 Votes</p>
+          <div class="panel-actions">
+            <button class="btn btn-primary" data-create-prop>Create Proposal</button>
+            <button class="btn btn-outline" data-vote>Vote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements / Badges -->
+  <section id="badges" class="section alt">
+    <div class="section-inner">
+      <h2>Achievements / NFT Badges</h2>
+      <div id="badgeGallery" class="badge-gallery">
+        <div class="badge">GreenProof Badge</div>
+        <div class="badge">Energy Saver Badge</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="section-inner">
+      <h2>About / FAQ</h2>
+      <details>
+        <summary>How do I mint an eco-badge?</summary>
+        <p>Join a quest, upload verifiable proof (photo, QR, or IoT), then press "Mint NFT". The app will call the mint API (Verbwire or your backend).</p>
+      </details>
+      <details>
+        <summary>What is BlockDAG?</summary>
+        <p>BlockDAG is the ledger tech used for fast micropayments and near-instant settlement in our design.</p>
+      </details>
+      <details>
+        <summary>How to report a problem?</summary>
+        <p>Contact the DAO forum or email: team@carbonx.example</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="modalRoot" class="modal-root" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
